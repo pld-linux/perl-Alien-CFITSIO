@@ -16,6 +16,7 @@ Source0:	https://www.cpan.org/modules/by-module/Alien/%{pdir}-%{pnam}-v%{version
 URL:		https://metacpan.org/dist/Alien-CFITSIO
 BuildRequires:	cfitsio-devel >= 4.4.0
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.52
+BuildRequires:	perl-Sort-Versions
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.745
