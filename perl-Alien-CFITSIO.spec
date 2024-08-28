@@ -8,7 +8,7 @@ Summary:	Alien::CFITSIO - Install the CFITSIO library
 Summary(pl.UTF-8):	Alien::CFITSIO - instalacja biblioteki CFITSIO
 Name:		perl-Alien-CFITSIO
 Version:	4.4.0.2
-Release:	3
+Release:	4
 License:	GPL v3
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-module/Alien/%{pdir}-%{pnam}-v%{version}.tar.gz
