@@ -7,24 +7,29 @@
 Summary:	Alien::CFITSIO - Install the CFITSIO library
 Summary(pl.UTF-8):	Alien::CFITSIO - instalacja biblioteki CFITSIO
 Name:		perl-Alien-CFITSIO
-Version:	4.4.0.2
-Release:	7
+Version:	4.6.2.5
+Release:	1
 License:	GPL v3
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-module/Alien/%{pdir}-%{pnam}-v%{version}.tar.gz
-# Source0-md5:	bd914ee4cb81359dc93b677e97ac64b7
+# Source0-md5:	2dcb35b5d9e828112e21a8278ad39183
 URL:		https://metacpan.org/dist/Alien-CFITSIO
-BuildRequires:	cfitsio-devel >= 4.4.0
+BuildRequires:	cfitsio-devel >= 4.6.2
+BuildRequires:	perl-Alien-Build >= 1.53
+BuildRequires:	perl-Alien-curl
+BuildRequires:	perl-Alien-patch >= 0.15
+BuildRequires:	perl-Alien-zlib
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.52
 BuildRequires:	perl-Sort-Versions
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-Alien-Base
-BuildRequires:	perl-Alien-Build >= 0.32
-BuildRequires:	perl-Package-Stash
+BuildRequires:	perl-Package-Stash >= 0.40
 BuildRequires:	perl-Test-Alien >= 2.39_01
+BuildRequires:	perl-Test-Simple
 BuildRequires:	perl-Test2-Suite
 %endif
 %requires_eq	cfitsio-devel
@@ -45,9 +50,10 @@ Ten moduł znajduje lub buduje bibliotekę CFITSIO. Obsługuje wersję
 %setup -q -n %{pdir}-%{pnam}-v%{version}
 
 %build
-export ALIEN_CFITSIO_ATLEAST_VERSION=4.4.0
+export ALIEN_CFITSIO_ATLEAST_VERSION=4.6.2
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make}
 
 %{?with_tests:%{__make} test}
